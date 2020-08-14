@@ -16,7 +16,6 @@ export default {
 
 <style lang="scss" scoped>
 .nav-wrapper {
-  border: 1px solid green;
   display: flex;
   flex-direction: column;
   height: 100vh;
