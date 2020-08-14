@@ -23,12 +23,13 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "../assets/style/helper.scss";
     nav {
+        @extend %outerShadow;
         display: flex;
-        box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
         flex-direction: row;
         font-size: 12px;
-        color: #1296db;
+        color: rgb(36,113,155);
 
         > .item {
             padding: 2px 0;
@@ -37,6 +38,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            background: rgba(65,171,226,0.5);
 
             .icon {
                 width: 32px;
@@ -44,8 +46,8 @@
             }
         }
         > .item.selected{
-            color:white;
-            background: #1296db;
+            color: whitesmoke;
+            background: rgb(36,113,155);
 
         }
     }
