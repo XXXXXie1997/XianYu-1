@@ -16,7 +16,8 @@
 
 <script>
   export default {
-    name: "Tags"
+    name: "Tags",
+
   }
 </script>
 
