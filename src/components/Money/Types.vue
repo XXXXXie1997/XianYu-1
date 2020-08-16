@@ -23,8 +23,6 @@
   export default class Types extends Vue {
     type = '-';
 
-    @Prop(Number) xxx: number | undefined;
-
     selectType(type: string) {
       if (type !== '-' && type !== '+') {
         throw new Error('type is unknown');
@@ -32,21 +30,6 @@
       this.type = type;
     }
   }
-  // export default {
-  //   name: 'Types',
-  //   props:['xxx'],
-  //   data() {
-  //     return {
-  //       type: '-'
-  //     }
-  //   },
-  //   mounted() {
-  //     console.log(this.xxx)
-  //   },
-  //   methods: {
-  //
-  //   }
-  // };
 </script>
 
 <style lang="scss" scoped>

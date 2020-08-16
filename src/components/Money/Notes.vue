@@ -17,7 +17,7 @@
     .notes {
         color: whitesmoke;
         font-size: 16px;
-        background: rgba(65,171,226,0.8);
+        background: rgba(65,171,226,0.9);
         padding-left: 16px;
         display: flex;
         align-items: center;
