@@ -63,7 +63,9 @@
       this.output = '0';
     }
 
-    // ok() {}
+    ok() {
+      return;
+    }
   }
 </script>
 
