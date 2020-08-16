@@ -34,7 +34,7 @@
 
 <style lang="scss" scoped>
     .types {
-        background: rgb(65, 171, 226);
+        background: rgb(64,161,211);
         color: whitesmoke;
         display: flex;
         text-align: center;
