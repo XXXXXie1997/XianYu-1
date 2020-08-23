@@ -99,6 +99,7 @@
                 background: transparent;
                 border: none;
 
+
                 &.ok {
                     height: 64*2px;
                     float: right;
