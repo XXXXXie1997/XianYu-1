@@ -23,12 +23,11 @@
   import Button from "@/components/Button.vue";
 
 
-  tagListModel.fetch();
   @Component({
     components: {Button}
   })
   export default class Labels extends Vue {
-    tags = tagListModel.data;
+    tags = window.tagList;
 
     createTag() {
       const name = window.prompt('请输入标签名');
@@ -37,7 +36,7 @@
         if (message === 'duplicated') {
           window.alert('标签名重复，请检查');
         } else if (message === 'success') {
-          window.alert('创建成功');
+          window.alert('创建成功,新的标签会显示在记账页');
         }
       }
     }
@@ -46,10 +45,12 @@
 
 <style lang="scss" scoped>
     .tags {
+        max-height:80%;
         color: white;
         background: rgb(77,77,77);
         font-size: 16px;
         padding-left: 16px;
+        overflow: auto;
 
         > .tag {
             min-height: 44px;
