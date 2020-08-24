@@ -34,11 +34,12 @@
 
 <style lang="scss" scoped>
     .types {
-        background: rgb(64, 161, 211);
+        background: rgba(33, 33, 33, 0.8);
         color: whitesmoke;
         display: flex;
         text-align: center;
         font-size: 24px;
+        border-top: 1px solid rgb(55, 55, 55);
 
         > li {
             width: 50%;
@@ -55,7 +56,7 @@
                 left: 0;
                 width: 100%;
                 height: 4px;
-                background: rgb(36, 113, 155);
+                background: rgb(77, 77, 77);
             }
         }
     }

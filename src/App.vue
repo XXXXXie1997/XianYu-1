@@ -1,7 +1,9 @@
 <template>
-    <div id="app">
+   <Layout>
+        <transition name="transitionRouter">
         <router-view/>
-    </div>
+        </transition>
+   </Layout>
 </template>
 
 <style lang="scss">
@@ -13,7 +15,7 @@
     }
 
     body {
-        background: #f5f5f5;
+        background: #000;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
 
@@ -29,8 +31,8 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
-        $bg:rgb(209,229,239);
-        background: darken($bg,4%);
+        $bg:#000;
+        background: #000;
     }
 
     #nav {
@@ -44,5 +46,14 @@
                 color: #42b983;
             }
         }
+    }
+    .transitionRouter-enter-active,
+    .transitionRouter-leave-active {
+        transition: all 0.2s;
+    }
+
+    .transitionRouter-enter,
+    .transitionRouter-leave{
+        transform: translate3d(3%, 0, 0);
     }
 </style>

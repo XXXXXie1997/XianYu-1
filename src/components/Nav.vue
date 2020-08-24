@@ -38,7 +38,8 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            background: rgba(65,171,226,0.5);
+            background: rgba(33,33,33,0.8);
+         color: whitesmoke;
 
             .icon {
                 width: 32px;
@@ -46,8 +47,9 @@
             }
         }
         > .item.selected{
-            color: whitesmoke;
-            background: rgb(36,113,155);
+            $bg:rgb(33,33,33);
+            background: lighten($bg,10%);
+            color: rgb(255,190,0);
 
         }
     }

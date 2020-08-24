@@ -5,7 +5,7 @@ import router from "./router";
 import store from "./store";
 import Nav from "@/components/Nav.vue";
 import Layout from "@/components/Layout.vue";
-import Icon from "@/components/Icons.vue";
+import Icon from "@/components/Icon.vue";
 
 Vue.config.productionTip = false;
 

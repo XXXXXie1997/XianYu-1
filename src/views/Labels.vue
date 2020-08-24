@@ -47,7 +47,7 @@
 <style lang="scss" scoped>
     .tags {
         color: white;
-        background: rgb(83, 178, 228);
+        background: rgb(77,77,77);
         font-size: 16px;
         padding-left: 16px;
 
@@ -56,22 +56,23 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid rgb(56, 107, 134);
+            border-bottom: 1px solid rgb(100,100,100);
 
             svg {
                 width: 18px;
                 height: 18px;
-                color: #666;
+                color: #fff;
                 margin-right: 16px;
             }
         }
     }
 
     .createTag {
-        background: rgb(59, 127, 164);
-        color: white;
+        $bg:rgb(255,190,0);
+        background: $bg;
+        color: #000;
         border-radius: 4px;
-        border: none;
+        border: 2px solid lighten($bg,20%);
         height: 40px;
         padding: 0 16px;
 

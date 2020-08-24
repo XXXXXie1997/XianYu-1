@@ -13,7 +13,7 @@
                       field-name="标签名" placeholder="请输入标签名"/>
         </div>
         <div class="button-wrapper">
-            <Button @click="remove">删除标签</Button>
+            <Button @click="remove" class="removeTag">删除标签</Button>
         </div>
     </Layout>
 </template>
@@ -69,7 +69,7 @@
 
 <style lang="scss" scoped>
     .navBar {
-        background: rgb(83, 178, 228);
+        background: rgb(77,77,77);
         color: white;
         text-align: center;
         font-size: 16px;
@@ -94,15 +94,22 @@
     }
 
     .form-wrapper {
-        $bg: rgb(209, 229, 239);
-        background: lighten($bg, 4%);
+        background: rgb(111,111,111);
         margin-top: 4px;
-        border-radius: 5px;
     }
 
     .button-wrapper {
         text-align: center;
         padding: 16px;
         margin-top: 44-16px;
+    }
+    .removeTag{
+        $bg:rgb(255,190,0);
+        background: $bg;
+        color: #000;
+        border-radius: 4px;
+        border: 2px solid lighten($bg,20%);
+        height: 40px;
+        padding: 0 16px;
     }
 </style>

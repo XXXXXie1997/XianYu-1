@@ -29,7 +29,7 @@
 
 <style lang="scss" scoped>
     .formItem {
-        color: rgb(59,138,179);
+        color: white;
         font-size: 16px;
         padding-left: 16px;
         display: flex;
@@ -41,7 +41,7 @@
 
         input {
             font-size: 14px;
-            color: rgb(59,138,179);
+            color: white;
             height: 40px;
             flex-grow: 1;
             background: transparent;

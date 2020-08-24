@@ -5,15 +5,15 @@
             <button @click="inputContent">1</button>
             <button @click="inputContent">2</button>
             <button @click="inputContent">3</button>
-            <button @click="remove">删除</button>
+            <button @click="remove" class="remove">删除</button>
             <button @click="inputContent">4</button>
             <button @click="inputContent">5</button>
             <button @click="inputContent">6</button>
-            <button @click="clear">清空</button>
+            <button @click="clear" class="clear">清空</button>
             <button @click="inputContent">7</button>
             <button @click="inputContent">8</button>
             <button @click="inputContent">9</button>
-            <button @click="ok" class="ok">OK!</button>
+            <button @click="ok" class="ok">OK</button>
             <button @click="inputContent" class="zero">0</button>
             <button @click="inputContent">.</button>
 
@@ -83,8 +83,8 @@
             font-family: Consolas, monospace;
             padding: 9px 16px;
             text-align: right;
-            background: rgba(65, 171, 226, 0.8);
-            color: whitesmoke;
+            background: rgba(33,33,33,0.8);
+            color: white;
             height: 72px;
         }
 
@@ -92,54 +92,43 @@
             @extend %clearFix;
 
             > button {
-                color: whitesmoke;
+                padding: 5px;
+                background: rgb(33, 33, 33);
+                font-size: 16px;
+                color: white;
                 width: 25%;
                 height: 64px;
                 float: left;
-                background: transparent;
-                border: none;
+                border: 1px solid rgb(55, 55, 55);
 
-
-                &.ok {
-                    height: 64*2px;
-                    float: right;
-                }
+                $bg: rgba(33, 33, 33);
 
                 &.zero {
                     width: 25*2%;
                 }
 
-                $bg: rgba(18, 150, 219, 0.8);
-
-                &:nth-child(1) {
-                    background: $bg;
+                &.ok {
+                    height: 64*2px;
+                    float: right;
+                    background: rgb(255, 190, 0);
+                    color: white;
+                }
+                &.remove {
+                    color: rgb(255, 190, 0);
                 }
 
-                &:nth-child(2), &:nth-child(5) {
-                    background: darken($bg, 4%);
+                &.clear {
+                    color: rgb(255, 190, 0);
                 }
 
-                &:nth-child(3), &:nth-child(6), &:nth-child(9) {
-                    background: darken($bg, 4*2%);
-                }
 
-                &:nth-child(4), &:nth-child(7), &:nth-child(10) {
-                    background: darken($bg, 4*3%);
-                }
 
-                &:nth-child(8), &:nth-child(11), &:nth-child(13) {
-                    background: darken($bg, 4*4%);
-                }
-
-                &:nth-child(14) {
-                    background: darken($bg, 4*5%);
-                }
-
-                &:nth-child(12) {
-                    background: darken($bg, 4*6%);
-                }
             }
+
+
+
         }
     }
+
 
 </style>

@@ -61,7 +61,7 @@
             flex-wrap: wrap;
 
             > li {
-                $bg: rgb(61, 140, 181);
+                $bg: rgb(77,77,77);
                 background: $bg;
                 color: whitesmoke;
                 $h: 24px;
@@ -73,7 +73,8 @@
                 margin-top: 4px;
 
                 &.selected {
-                    background: darken($bg, 20%);
+                    background: rgb(255,190,0);
+                    color: rgb(33,33,33);
                 }
             }
         }
@@ -84,8 +85,8 @@
             button {
                 background: transparent;
                 border: none;
-                color: rgba(61, 129, 166, 0.7);
-                border-bottom: 1px solid rgb(64, 161, 211);
+                color: rgba(111,111,111,0.8);
+                border-bottom: 1px solid rgb(111,111,111);
                 padding: 0 4px;
             }
         }
