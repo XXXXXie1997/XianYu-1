@@ -124,6 +124,14 @@
 
 
             }
+            > button:active{
+                background: rgb(77,77,77);
+                &.ok{
+                    $bg:rgb(255, 190, 0);
+                    background: darken($bg,20%);
+                }
+            }
+
 
 
 

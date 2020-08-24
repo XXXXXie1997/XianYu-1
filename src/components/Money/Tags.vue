@@ -49,7 +49,7 @@
 
 <style lang="scss" scoped>
     .tags {
-        background: rgba(101,186,230,0.1);
+        background: #000;
         font-size: 14px;
         padding: 16px;
         flex-grow: 1;
@@ -81,7 +81,7 @@
 
         > .new {
             padding-top: 16px;
-
+            text-align: center;
             button {
                 background: transparent;
                 border: none;

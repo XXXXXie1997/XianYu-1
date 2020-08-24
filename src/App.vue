@@ -1,9 +1,5 @@
 <template>
-   <Layout>
-        <transition name="transitionRouter">
         <router-view/>
-        </transition>
-   </Layout>
 </template>
 
 <style lang="scss">
@@ -19,7 +15,7 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
 
-        color: #333;
+        color: #000;
         font-family: $font-hei;
         font-size: 16px;
         line-height: 1.5;
@@ -47,13 +43,5 @@
             }
         }
     }
-    .transitionRouter-enter-active,
-    .transitionRouter-leave-active {
-        transition: all 0.2s;
-    }
 
-    .transitionRouter-enter,
-    .transitionRouter-leave{
-        transform: translate3d(3%, 0, 0);
-    }
 </style>
