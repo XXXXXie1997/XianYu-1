@@ -18,21 +18,8 @@
   import FormItem from "@/components/Money/FormItem.vue";
   import Tags from "@/components/Money/Tags.vue";
   import Types from "@/components/Money/Types.vue";
-  import {Component, Watch} from "vue-property-decorator";
-  import recordListModel from "@/models/recordListModel";
+  import {Component} from "vue-property-decorator";
 
-  const recordList = recordListModel.fetch();
-  const version = window.localStorage.getItem('version') || 0;
-  //version0.0.2 数据迁移
-  if (version === '0.0.1') {
-    recordList.forEach(record => {
-      record.createdAt = new Date(2020, 1, 1);
-    });
-    //保存数据
-    window.localStorage.setItem('recordList', JSON.stringify(recordList));
-  }
-  //升级版本
-  window.localStorage.setItem('version', '0.0.2');
 
 
   @Component({
@@ -46,7 +33,7 @@
       type: '-',
       amount: 0
     };
-    recordList: RecordItem[] = recordList;
+    recordList = window.recordList;
 
     onUpdateTags(value: string[]) {
       this.record.tags = value;
@@ -57,13 +44,9 @@
     }
 
     saveRecord() {
-    recordListModel.create(this.record)
+    window.createRecord(this.record);
     }
 
-    @Watch('recordList')
-    onRecordListChange() {
-      recordListModel.save();
-    }
   }
 </script>
 
