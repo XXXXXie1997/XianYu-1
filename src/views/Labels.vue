@@ -32,12 +32,7 @@
     createTag() {
       const name = window.prompt('请输入标签名');
       if (name) {
-        const message = tagListModel.create(name);
-        if (message === 'duplicated') {
-          window.alert('标签名重复，请检查');
-        } else if (message === 'success') {
-          window.alert('创建成功,新的标签会显示在记账页');
-        }
+    window.createTag(name);
       }
     }
   }
