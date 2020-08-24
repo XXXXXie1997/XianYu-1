@@ -1,17 +1,19 @@
 <template>
     <Layout>
         <div class="navBar">
-            <Icon class="leftIcon" name="left"/>
+            <Icon class="leftIcon" name="left" @click="goBack"/>
             <span class="title">
                 编辑标签
             </span>
             <span class="rightIcon"></span>
         </div>
         <div class="form-wrapper">
-            <FormItem :value="tag.name" field-name="标签名" placeholder="请输入标签名"/>
+            <FormItem :value="tag.name"
+                      @update:value="update"
+                      field-name="标签名" placeholder="请输入标签名"/>
         </div>
         <div class="button-wrapper">
-            <Button>删除标签</Button>
+            <Button @click="remove">删除标签</Button>
         </div>
     </Layout>
 </template>
@@ -40,16 +42,32 @@
         this.$router.replace('/404');
       }
     }
+
+    update(name: string) {
+      if (this.tag) {
+        tagListModel.update(this.tag.id, name);
+      }
+
+    }
+
+    remove() {
+      if (this.tag) {
+        tagListModel.remove(this.tag.id);
+      }
+    }
+    goBack(){
+      this.$router.back()
+    }
   }
 </script>
 
 <style lang="scss" scoped>
     .navBar {
-        background: rgb(83,178,228);
+        background: rgb(83, 178, 228);
         color: white;
         text-align: center;
         font-size: 16px;
-        padding: 12px 16px;
+        padding: 10px 16px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -70,8 +88,8 @@
     }
 
     .form-wrapper {
-        $bg:rgb(209,229,239);
-        background: lighten($bg,4%);
+        $bg: rgb(209, 229, 239);
+        background: lighten($bg, 4%);
         margin-top: 4px;
         border-radius: 5px;
     }
