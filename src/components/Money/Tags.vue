@@ -1,8 +1,11 @@
 <template>
 
     <div class="tags">
+        <div class="new">
+            <button @click="create">新建标签</button>
+        </div>
         <ul class="current">
-            <li v-for="tag in dataSource" :key="tag.id"
+            <li v-for="tag in tagList" :key="tag.id"
                 :class="{selected: selectedTags.indexOf(tag)>=0}"
                 @click="toggle(tag)">
                 {{tag.name}}
@@ -15,10 +18,11 @@
 <script lang="ts">
   import Vue from 'vue';
   import {Component, Prop} from 'vue-property-decorator';
+  import store from "@/store/index2";
 
   @Component
   export default class Tags extends Vue {
-    @Prop() readonly dataSource: string[] | undefined;
+    tagList = store.fetchTags();
     selectedTags: string[] = [];
 
     toggle(tag: string) {
@@ -28,19 +32,14 @@
       } else {
         this.selectedTags.push(tag);
       }
-      this.$emit('update:value',this.selectedTags)
+      this.$emit('update:value', this.selectedTags);
     }
 
-    // create() {
-    //   const name = window.prompt('请输入标签名');
-    //   if (name === '') {
-    //     window.alert('标签名不能为空');
-    //   } else {
-    //     if (this.dataSource)
-    //       this.$emit('update:dataSource',
-    //         [...this.dataSource, name]);
-    //   }
-    // }
+    create() {
+      const name = window.prompt('请输入标签名');
+      if (!name) {return window.alert('需要标签名');}
+      store.createTag(name);
+    }
   }
 </script>
 
@@ -58,7 +57,7 @@
             flex-wrap: wrap;
 
             > li {
-                $bg: rgb(77,77,77);
+                $bg: rgb(77, 77, 77);
                 background: $bg;
                 color: whitesmoke;
                 $h: 24px;
@@ -70,8 +69,8 @@
                 margin-top: 4px;
 
                 &.selected {
-                    background: rgb(255,190,0);
-                    color: rgb(33,33,33);
+                    background: rgb(255, 190, 0);
+                    color: rgb(33, 33, 33);
                 }
             }
         }
@@ -79,11 +78,12 @@
         > .new {
             padding-top: 16px;
             text-align: center;
+
             button {
                 background: transparent;
                 border: none;
-                color: rgba(111,111,111,0.8);
-                border-bottom: 1px solid rgb(111,111,111);
+                color: rgba(255, 190, 0, 0.6);
+                border-bottom: 1px solid rgba(255, 190, 0, 0.8);
                 padding: 0 4px;
             }
         }

@@ -5,11 +5,13 @@
             <button @click="inputContent">1</button>
             <button @click="inputContent">2</button>
             <button @click="inputContent">3</button>
-            <button @click="remove" class="remove">删除</button>
+            <button @click="remove" class="remove">
+                <Icon name="delete" class="icon-delete"/>
+            </button>
             <button @click="inputContent">4</button>
             <button @click="inputContent">5</button>
             <button @click="inputContent">6</button>
-            <button @click="clear" class="clear">清空</button>
+            <button @click="clear" class="clear">AC</button>
             <button @click="inputContent">7</button>
             <button @click="inputContent">8</button>
             <button @click="inputContent">9</button>
@@ -79,11 +81,13 @@
         .output {
             @extend %clearFix;
             @extend %innerShadow;
+            border-top: 1px solid rgb(55, 55, 55);
+            border-bottom: 1px solid rgb(55, 55, 55);
             font-size: 36px;
             font-family: Consolas, monospace;
             padding: 9px 16px;
             text-align: right;
-            background: rgba(33,33,33,0.8);
+            background: rgba(33, 33, 33, 0.8);
             color: white;
             height: 72px;
         }
@@ -94,7 +98,7 @@
             > button {
                 padding: 5px;
                 background: rgb(33, 33, 33);
-                font-size: 16px;
+                font-size: 18px;
                 color: white;
                 width: 25%;
                 height: 64px;
@@ -113,6 +117,7 @@
                     background: rgb(255, 190, 0);
                     color: white;
                 }
+
                 &.remove {
                     color: rgb(255, 190, 0);
                 }
@@ -122,19 +127,22 @@
                 }
 
 
-
             }
-            > button:active{
-                background: rgb(77,77,77);
-                &.ok{
-                    $bg:rgb(255, 190, 0);
-                    background: darken($bg,20%);
+
+            > button:active {
+                background: rgb(77, 77, 77);
+
+                &.ok {
+                    $bg: rgb(255, 190, 0);
+                    background: darken($bg, 20%);
                 }
             }
 
 
+        }
 
-
+        .icon-delete {
+            font-size: 24px;
         }
     }
 

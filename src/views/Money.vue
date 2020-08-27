@@ -3,12 +3,11 @@
         <NumberPad :value.sync="record.amount" @submit="saveRecord"/>
         <Types :value.sync="record.type"/>
         <div class="notes">
-        <FormItem field-name="备注"
-                  placeholder="在这里输入备注"
-                  @update:value='onUpdateNotes'/>
+            <FormItem field-name="备注"
+                      placeholder="在这里输入备注"
+                      @update:value='onUpdateNotes'/>
         </div>
-        <Tags :data-source.sync="tags"
-              @update:value="onUpdateTags"/>
+        <Tags/>
     </Layout>
 </template>
 
@@ -22,12 +21,11 @@
   import store from "@/store/index2.ts";
 
 
-
   @Component({
     components: {Types, Tags, FormItem, NumberPad},
   })
   export default class Money extends Vue {
-    tags = store.tagList;
+
     record: RecordItem = {
       tags: [],
       notes: '',
@@ -36,16 +34,13 @@
     };
     recordList = store.recordList;
 
-    onUpdateTags(value: string[]) {
-      this.record.tags = value;
-    }
 
     onUpdateNotes(value: string) {
       this.record.notes = value;
     }
 
     saveRecord() {
-    store.createRecord(this.record);
+      store.createRecord(this.record);
     }
 
   }
@@ -56,7 +51,8 @@
         display: flex;
         flex-direction: column-reverse;
     }
-    .notes{
+
+    .notes {
         padding: 12px 0;
     }
 </style>
