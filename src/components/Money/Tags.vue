@@ -22,14 +22,17 @@
   @Component({
     computed: {
       tagList() {
-        //TODO
-        // return  this.$store.fetchTags()
-        return [];
+        return this.$store.state.tagList;
       }
     }
   })
   export default class Tags extends Vue {
     selectedTags: string[] = [];
+
+    created() {
+      this.$store.commit('fetchTags');
+    }
+
 
     toggle(tag: string) {
       const index = this.selectedTags.indexOf(tag);
@@ -44,8 +47,8 @@
     create() {
       const name = window.prompt('请输入标签名');
       if (!name) {return window.alert('需要标签名');}
-      //TODO
-      // store.createTag(name);
+
+      this.$store.commit('createTag',name);
     }
   }
 </script>
