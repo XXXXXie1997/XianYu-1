@@ -20,30 +20,29 @@
   import Vue from 'vue';
   import {Component} from 'vue-property-decorator';
   import Button from "@/components/Button.vue";
-
+  import {mixins} from "vue-class-component";
+  import TagHelper from "@/mixins/TagHelper";
 
   @Component({
-    components: {Button}
+    components: {Button},
+    computed: {
+      tags() {
+        return this.$store.state.tagList;
+      },
+    }
   })
-  export default class Labels extends Vue {
-    //TODO
-    tags = [] //store.tagList;
-
-    createTag() {
-      const name = window.prompt('请输入标签名');
-      if (name) {
-        //TODO
-    // store.createTag(name);
-      }
+  export default class Labels extends mixins(TagHelper){
+    beforeCreate() {
+      this.$store.commit('fetchTags');
     }
   }
 </script>
 
 <style lang="scss" scoped>
     .tags {
-        max-height:80%;
+        max-height: 80%;
         color: white;
-        background: rgb(77,77,77);
+        background: rgb(77, 77, 77);
         font-size: 16px;
         padding-left: 16px;
         overflow: auto;
@@ -53,7 +52,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid rgb(100,100,100);
+            border-bottom: 1px solid rgb(100, 100, 100);
 
             svg {
                 width: 18px;
@@ -65,11 +64,11 @@
     }
 
     .createTag {
-        $bg:rgb(255,190,0);
+        $bg: rgb(255, 190, 0);
         background: $bg;
         color: #000;
         border-radius: 4px;
-        border: 2px solid lighten($bg,20%);
+        border: 2px solid lighten($bg, 20%);
         height: 40px;
         padding: 0 16px;
 
