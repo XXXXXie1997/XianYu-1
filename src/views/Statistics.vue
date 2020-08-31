@@ -25,37 +25,40 @@
     type = '-';
     interval = 'day';
     intervalList = intervalList;
-     recordTypeList = recordTypeList
+    recordTypeList = recordTypeList;
   }
 </script>
 
 
 <style lang="scss" scoped>
-    ::v-deep .type-tabs-item {
-        background: black;
-        border: none;
+    ::v-deep {
+        .type-tabs-item {
+            background: black;
+            border: none;
 
-        &.selected {
+            &.selected {
+                background: rgb(77, 77, 77);
+
+
+                &::after {
+                    display: none;
+                }
+            }
+        }
+
+        .interval-tabs-item {
+            font-size: 18px;
+            height: 48px;
             background: rgb(77, 77, 77);
+            border: none;
 
+            &.selected {
+                background: rgb(77, 77, 77);
 
-            &::after {
-                display: none;
             }
         }
     }
 
-    ::v-deep .interval-tabs-item {
-        font-size: 18px;
-        height: 48px;
-        background: rgb(77, 77, 77);
-        border: none;
-
-        &.selected {
-            background: rgb(77, 77, 77);
-
-        }
-    }
 
     .check {
         color: white;
