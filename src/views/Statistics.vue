@@ -46,6 +46,8 @@
     }
 
     ::v-deep .interval-tabs-item {
+        font-size: 18px;
+        height: 48px;
         background: rgb(77, 77, 77);
         border: none;
 
