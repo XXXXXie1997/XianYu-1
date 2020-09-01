@@ -31,7 +31,7 @@
     .formItem {
         color: white;
         font-size: 16px;
-        padding-left: 16px;
+        padding: 12px 0 12px 16px;
         display: flex;
         align-items: center;
 

@@ -34,7 +34,7 @@
 
     created() {
       const id = this.$route.params.id;
-      this.$store.commit('fetchTags')
+      this.$store.commit('fetchTags');
       this.$store.commit('setCurrentTag', id);
       if (!this.currentTag) {
         this.$router.replace('/404');
@@ -43,14 +43,16 @@
 
     update(name: string) {
       if (this.currentTag) {
-       this.$store.commit('updateTag',{
-         id:this.currentTag.id,name});
+        this.$store.commit('updateTag', {
+          id: this.currentTag.id, name
+        });
       }
     }
 
+
     remove() {
       if (this.currentTag) {
-        this.$store.commit('removeTag',this.currentTag.id);
+        this.$store.commit('removeTag', this.currentTag.id);
       }
     }
 
@@ -95,15 +97,27 @@
         text-align: center;
         padding: 16px;
         margin-top: 44-16px;
+        display: flex;
+        justify-content: space-around;
     }
 
-    .removeTag {
+    .modifyTag{
         $bg: rgb(255, 190, 0);
         background: $bg;
-        color: #000;
+        color: white;
         border-radius: 4px;
         border: 2px solid lighten($bg, 20%);
         height: 40px;
         padding: 0 16px;
+    }
+    .removeTag  {
+        $bg: rgb(255,51,0);
+        background: $bg;
+        color: white;
+        border-radius: 4px;
+        border: 2px solid lighten($bg, 20%);
+        height: 40px;
+        padding: 0 16px;
+
     }
 </style>

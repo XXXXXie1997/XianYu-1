@@ -106,6 +106,7 @@
         background: rgb(33,33,33);
         color: rgb(255, 190, 0);
         border-bottom: 1px solid rgb(55,55,55);
+        font-size: 16px;
     }
 
     .record {

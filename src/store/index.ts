@@ -23,7 +23,7 @@ const store = new Vuex.Store({
       if (idList.indexOf(id) >= 0) {
         const names = state.tagList.map(item => item.name);
         if (names.indexOf(name) >= 0) {
-          window.alert('标签名重复，请检车');
+          window.alert('标签名重复，请检查');
         } else {
           const tag = state.tagList.filter(item => item.id === id)[0];
           tag.name = name;
