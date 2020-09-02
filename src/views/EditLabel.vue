@@ -13,6 +13,7 @@
                       field-name="标签名" placeholder="请输入标签名"/>
         </div>
         <div class="button-wrapper">
+            <Button class="modifyTag">(施工中)</Button>
             <Button @click="remove" class="removeTag">删除标签</Button>
         </div>
     </Layout>
@@ -48,6 +49,11 @@
         });
       }
     }
+
+    //TODO
+    // submit(){
+    //
+    // }
 
 
     remove() {
