@@ -32,7 +32,7 @@ window.onload = function () {
 if(document.documentElement.clientWidth>500){
   window.alert('使用手机打开本页面已获得最佳体验')
   const img = document.createElement('img')
-  img.src = 'https://imgchr.com/i/wC6sqP'
+  img.src = 'https://s1.ax1x.com/2020/09/03/wC6sqP.png'
   img.style.position = 'fixed'
   img.style.left = '50%'
   img.style.top = '50%'
