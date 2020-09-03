@@ -55,10 +55,11 @@
       }
 
       if (this.$store.state.createRecordError === null) {
+        this.$store.commit('createRecord', this.record);
         window.alert('已保存');
         this.record.notes = '';
       }
-      this.$store.commit('createRecord', this.record);
+
     }
 
   }

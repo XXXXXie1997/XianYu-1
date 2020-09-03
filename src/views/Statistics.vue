@@ -143,7 +143,8 @@
     .notes {
         margin-right: auto;
         margin-left: 8px;
-        color: rgb(255,190,0)
+        color: rgba(255,190,0,0.6);
+        font-size: 14px;
     }
 
     .font {
@@ -154,6 +155,6 @@
         text-align: center;
     }
     .show-tags{
-        color:rgba(255,255,255,0.5)
+        color:rgba(255,255,255,0.8)
     }
 </style>
