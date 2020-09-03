@@ -1,9 +1,9 @@
 const path = require('path');
 
 module.exports = {
-publicPath: process.env.NODE_ENV === 'production'
-  ? '/XianYu-1-website/'
-  : '/',
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/XianYu-1-website/'
+    : '/',
   lintOnSave: false,
   chainWebpack: (config) => {
     const dir = path.resolve(__dirname, "src/assets/icons");
@@ -19,9 +19,9 @@ publicPath: process.env.NODE_ENV === 'production'
       .use('svgo-loader')
       .loader('svgo-loader')
       .tap(options => ({
-      ...options,
-      plugins: [{removeAttrs: {attrs: 'fill'}}]
-    })).end();
+        ...options,
+        plugins: [{removeAttrs: {attrs: 'fill'}}]
+      })).end();
 
     config
       .plugin("svg-sprite")
