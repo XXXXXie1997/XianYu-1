@@ -32,7 +32,7 @@ window.onload = function () {
 if(document.documentElement.clientWidth>500){
   window.alert('使用手机打开本页面已获得最佳体验')
   const img = document.createElement('img')
-  img.src = '/blob/gh-pages/qrcode.png'
+  img.src = 'https://imgchr.com/i/wC6sqP'
   img.style.position = 'fixed'
   img.style.left = '50%'
   img.style.top = '50%'
