@@ -50,11 +50,6 @@
       }
     }
 
-    //TODO
-    // submit(){
-    //
-    // }
-
 
     remove() {
       if (this.currentTag) {
