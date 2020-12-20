@@ -76,7 +76,7 @@ const store = new Vuex.Store({
       }
       state.tagList.push({id, name: name});
       store.commit('saveTags');
-      window.alert('创建成功,新的标签会显示在记账页');
+      window.alert('创建成功');
     },
     saveTags(state) {
       window.localStorage.setItem('tagList', JSON.stringify(state.tagList));

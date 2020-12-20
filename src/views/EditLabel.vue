@@ -13,8 +13,7 @@
                       field-name="标签名" placeholder="请输入标签名"/>
         </div>
         <div class="button-wrapper">
-            <Button class="modifyTag">(施工中)</Button>
-            <Button @click="remove" class="removeTag">删除标签</Button>
+            <Button @click="remove" class="removeTag">删除</Button>
         </div>
     </Layout>
 </template>
@@ -24,6 +23,7 @@
   import {Component} from 'vue-property-decorator';
   import FormItem from "@/components/Money/FormItem.vue";
   import Button from "@/components/Button.vue";
+
 
   @Component({
     components: {Button, FormItem},
@@ -49,7 +49,6 @@
         });
       }
     }
-
 
     remove() {
       if (this.currentTag) {
@@ -102,15 +101,6 @@
         justify-content: space-around;
     }
 
-    .modifyTag{
-        $bg: rgb(255, 190, 0);
-        background: $bg;
-        color: white;
-        border-radius: 4px;
-        border: 2px solid lighten($bg, 20%);
-        height: 40px;
-        padding: 0 16px;
-    }
     .removeTag  {
         $bg: rgb(255,51,0);
         background: $bg;
