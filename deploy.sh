@@ -4,8 +4,7 @@
 set -e
 
 # 构建
-yarn build
-
+npm run build
 # cd 到构建输出的目录下
 cd dist
 
@@ -15,11 +14,9 @@ cd dist
 git init
 git add -A
 git commit -m 'deploy'
+git branch -M main
 
-# 部署到 https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
-# 部署到 https://<USERNAME>.github.io/<REPO>
- git push -f git@github.com:XXXXXie1997/XianYu-1-website.git master:gh-pages
+ git push -f git@github.com:XXXXXie1997/XianYu-1-website.git main:gh-pages
 
 cd -
